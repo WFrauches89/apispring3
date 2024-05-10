@@ -6,7 +6,7 @@ CREATE TABLE pacientes(
     email varchar(100) NOT NULL UNIQUE,
     telefone varchar(20) NOT NULL,
     cpf varchar(15) NOT NULL UNIQUE,
-    logradrouro varchar(100)  NOT NULL,
+    logradouro varchar(100)  NOT NULL,
     bairro varchar(100) NOT NULL,
     cep varchar(9) NOT NULL,
     complemento varchar(100),

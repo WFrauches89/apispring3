@@ -11,7 +11,8 @@ public record DadosMedicosResponse(Long id,
                                    Especialidade especialidade) {
 
     public DadosMedicosResponse(Medicos medico) {
-        this(medico.getId(),medico.getNome(), medico.getEmail(), medico.getCrm(), medico.getStatus(),medico.getEspecialidade());
+        this(medico.getId(),medico.getNome(), medico.getEmail(), medico.getCrm(), medico.getStatus(),
+                medico.getEspecialidade());
     }
 
 }

@@ -1,0 +1,21 @@
+package com.meuscursos.apirestspring3.enums;
+
+public enum Especialidade {
+
+    ORTOPEDIA,
+    CARDIOLOGIA,
+    GINECOLOGIA,
+    PEDIATRIA,
+    OTORRINOLARINGOLOGIA,
+    NEUROLOGIA,
+    UROLOGIA,
+    OFTALMOLOGIA,
+    PNEUMOLOGIA,
+    ENDOCRINOLOGIA,
+    NEFROLOGIA,
+    PSIQUIATRIA,
+    REUMATOLOGIA,
+    NEUROCIRURGIA,
+    DERMATOLOGIA;
+
+}

@@ -22,6 +22,7 @@ public class Pacientes {
     private String nome;
     private String email;
     private String telefone;
+
     private String cpf;
     @Embedded
     private Endereco endereco;

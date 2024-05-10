@@ -30,4 +30,20 @@ public class Endereco {
       this.cep = dadosEnd.cep();
       this.cidade = dadosEnd.cidade();
    }
+
+    public void atualizarEndereco(EnderecoDTO dados) {
+      if(dados != null){
+         this.logradouro = dados.logradouro();
+         this.bairro= dados.bairro();
+         this.uf= dados.uf();
+         this.cep = dados.cep();
+         this.cidade = dados.cidade();
+         if (dados.numero() != null) {
+            this.numero = dados.numero();
+         }
+         if (dados.complemento() != null) {
+            this.complemento = dados.complemento();
+         }
+      }
+    }
 }

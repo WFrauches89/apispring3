@@ -34,7 +34,6 @@ public class MedicosController {
     @GetMapping("/{id}")
     public ResponseEntity buscarMedico(@PathVariable Long id){
         var medicoBuscado = medicosRepository.getReferenceById(id);
-
         return ResponseEntity.ok(new DadosMedicosResponseDetails(medicoBuscado));
     }
 

@@ -10,7 +10,7 @@ import org.hibernate.validator.constraints.UniqueElements;
 import org.hibernate.validator.constraints.br.CPF;
 
 public record DadosCadastroPaciente(
-        @NotBlank
+        @NotBlank(message = "{nome.obrigatorio}")
         String nome,
         @NotBlank @Email
         String email,

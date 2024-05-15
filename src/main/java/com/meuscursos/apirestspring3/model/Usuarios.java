@@ -1,6 +1,9 @@
 package com.meuscursos.apirestspring3.model;
 
 
+import com.meuscursos.apirestspring3.dto.enderecos.EnderecoDTO;
+import com.meuscursos.apirestspring3.dto.usuarios.DadosAtualizarUsuario;
+import com.meuscursos.apirestspring3.dto.usuarios.DadosCadastroUsuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -30,6 +33,26 @@ public class Usuarios implements UserDetails {
     private String email;
 
     private String password;
+
+    private String nome;
+
+    private String telefone;
+
+    private Boolean status;
+
+    private String cpf;
+    @Embedded
+    private Endereco endereco;
+
+    public Usuarios(DadosCadastroUsuario dadosUser) {
+        this.status = true;
+        this.nome = dadosUser.nome();
+        this.email = dadosUser.email();
+        this.password = dadosUser.password();
+        this.telefone = dadosUser.telefone();
+        this.cpf = dadosUser.cpf();
+        this.endereco = new Endereco(dadosUser.endereco());
+    }
 
 
     @Override
@@ -65,5 +88,25 @@ public class Usuarios implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public void atualizar(DadosAtualizarUsuario dadosAtualizarUsuario) {
+
+        if(dadosAtualizarUsuario != null){
+            if(dadosAtualizarUsuario.nome() != null){
+                this.nome = dadosAtualizarUsuario.nome();
+            }
+            if(dadosAtualizarUsuario.telefone() != null){
+                this.telefone = dadosAtualizarUsuario.telefone();
+            }
+            if(dadosAtualizarUsuario.endereco() != null){
+                this.endereco.atualizarEndereco(dadosAtualizarUsuario.endereco());
+            }
+
+        }
+    }
+
+    public void deleteUser (Long id) {
+        this.status = false;
     }
 }

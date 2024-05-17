@@ -3,6 +3,7 @@ package com.meuscursos.apirestspring3.controller;
 import com.meuscursos.apirestspring3.dto.medico.*;
 import com.meuscursos.apirestspring3.model.Medicos;
 import com.meuscursos.apirestspring3.repository.MedicosRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/medicos")
+@SecurityRequirement(name = "bearer-key")
 public class MedicosController {
 
     @Autowired

@@ -6,6 +6,7 @@ import com.meuscursos.apirestspring3.dto.pacientes.DadosCadastroPaciente;
 import com.meuscursos.apirestspring3.dto.pacientes.DadosPacientesResponseDetails;
 import com.meuscursos.apirestspring3.model.Pacientes;
 import com.meuscursos.apirestspring3.repository.PacientesRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/pacientes")
+@SecurityRequirement(name = "bearer-key")
 public class PacientesController {
 
     @Autowired

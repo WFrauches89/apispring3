@@ -55,4 +55,7 @@ public class Pacientes {
     public void deletePaciente(Long id) {
         this.status = false;
     }
+
+    
+
 }

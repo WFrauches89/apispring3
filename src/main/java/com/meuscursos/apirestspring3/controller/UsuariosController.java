@@ -8,6 +8,7 @@ import com.meuscursos.apirestspring3.dto.usuarios.DadosUsuarioResponseDetails;
 import com.meuscursos.apirestspring3.infra.security.ConfigSecurity;
 import com.meuscursos.apirestspring3.model.Usuarios;
 import com.meuscursos.apirestspring3.repository.UsuariosRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/usuarios")
+@SecurityRequirement(name = "bearer-key")
 public class UsuariosController {
 
     @Autowired

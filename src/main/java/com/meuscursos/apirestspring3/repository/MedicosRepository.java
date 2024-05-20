@@ -9,8 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.List;
+
 
 @Repository
 public interface MedicosRepository extends JpaRepository<Medicos, Long> {
@@ -31,7 +30,7 @@ public interface MedicosRepository extends JpaRepository<Medicos, Long> {
                 and
                 c.motivoCancelamento is null
             )
-            order by rand()
+            order by function('random')
             limit 1
         """)
     Medicos escolherMedicoAleatorioLivreNaData(Especialidade especialidade, LocalDateTime data);

@@ -4,11 +4,8 @@ import com.meuscursos.apirestspring3.model.Usuarios;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Optional;
+public interface AuthenticationUsuariosRepository extends JpaRepository<Usuarios, Long> {
 
-public interface UsuariosRepository extends JpaRepository<Usuarios, Long> {
-
-    Optional<UserDetails> findByEmail(String username);
-
+    UserDetails findByEmail(String email);
 
 }

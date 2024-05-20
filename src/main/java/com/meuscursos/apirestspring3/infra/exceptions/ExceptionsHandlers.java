@@ -65,4 +65,16 @@ public class ExceptionsHandlers {
             this(erro.getField(), erro.getDefaultMessage());
         }
     }
+
+    @ExceptionHandler(EmailMismatchException.class)
+    public ResponseEntity<String> handleEmailMismatchException(EmailMismatchException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+    }
+
+    @ExceptionHandler(IncorrectPasswordException.class)
+    public ResponseEntity<String> handleIncorrectPasswordException(IncorrectPasswordException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+    }
+
 }
+

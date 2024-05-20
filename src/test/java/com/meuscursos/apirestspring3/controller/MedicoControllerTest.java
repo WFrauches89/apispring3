@@ -61,7 +61,7 @@ class MedicoControllerTest {
     void cadastrar_cenario2() throws Exception {
         var dadosCadastro = new DadosCadastroMedico(
                 "Medico",
-                "medico@voll.med",
+                "medico@voll.com",
                 "61999999999",
                 "123456",
                 Especialidade.CARDIOLOGIA,
@@ -79,8 +79,8 @@ class MedicoControllerTest {
                 null,
                 dadosCadastro.nome(),
                 dadosCadastro.email(),
-                dadosCadastro.crm(),
                 dadosCadastro.telefone(),
+                dadosCadastro.crm(),
                 dadosCadastro.especialidade(),
                 new Endereco(dadosCadastro.endereco())
         );
@@ -93,12 +93,12 @@ class MedicoControllerTest {
     private EnderecoDTO dadosEndereco() {
         return new EnderecoDTO(
                 "rua xpto",
-                "bairro",
-                "00000000",
+                "777",
+                "casa",
                 "Brasilia",
                 "DF",
-                null,
-                null
+                "00000000",
+                "Brasilia"
         );
     }
 

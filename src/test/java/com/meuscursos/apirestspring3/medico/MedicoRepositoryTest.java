@@ -47,7 +47,7 @@ class MedicoRepositoryTest {
         var proximaSegundaAs10 = LocalDate.now()
                 .with(TemporalAdjusters.next(DayOfWeek.MONDAY))
                 .atTime(10, 0);
-        var medico = cadastrarMedico("Medico", "medico@voll.med", "123456", Especialidade.CARDIOLOGIA);
+        var medico = cadastrarMedico("Medico", "medico@voll.com", "123456", Especialidade.CARDIOLOGIA);
         var paciente = cadastrarPaciente("Paciente", "paciente@email.com", "00000000000");
         cadastrarConsulta(medico, paciente, proximaSegundaAs10);
 
@@ -88,19 +88,6 @@ class MedicoRepositoryTest {
     }
 
 
-    private String telefone;
-    @Column(unique=true)
-    private String crm;
-
-    private Boolean status;
-
-    @Enumerated(EnumType.STRING)
-    private Especialidade especialidade;
-
-    @Embedded
-    private Endereco endereco;
-
-
     private Pacientes cadastrarPaciente(String nome, String email, String cpf) {
         var paciente = new Pacientes(dadosPaciente(nome, email, cpf));
         em.persist(paciente);
@@ -131,12 +118,12 @@ class MedicoRepositoryTest {
     private EnderecoDTO dadosEndereco() {
         return new EnderecoDTO(
                 "rua xpto",
-                "bairro",
-                "00000000",
+                "777",
+                "casa",
                 "Brasilia",
                 "DF",
-                null,
-                null
+                "00000000",
+                "Brasilia"
         );
     }
 
